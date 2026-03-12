@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* DashSuba Design System Colors */
+  --color-dashsuba-primary: #1e293b; /* slate-800 */
+  --color-dashsuba-secondary: #64748b; /* slate-500 */
+  --color-dashsuba-accent: #0f172a; /* slate-900 */
+  --color-dashsuba-success: #10b981; /* emerald-500 */
+  --color-dashsuba-error: #ef4444; /* red-500 */
+  --color-dashsuba-surface: #f8fafc; /* slate-50 */
+  --color-dashsuba-border: #e2e8f0; /* slate-200 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
