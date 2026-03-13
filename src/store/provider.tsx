@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { Provider } from 'react-redux';
 import { makeStore, AppStore } from './index';
-import { persistStore } from 'redux-persist';
+import { persistStore, type Persistor } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ToastProvider } from '@/shared/components/ui/toast';
 
@@ -13,7 +13,7 @@ export default function StoreProvider({
   children: React.ReactNode;
 }) {
   const storeRef = useRef<AppStore>(undefined);
-  const persistorRef = useRef<any>(undefined);
+  const persistorRef = useRef<Persistor>(undefined);
 
   if (!storeRef.current) {
     storeRef.current = makeStore();
@@ -22,9 +22,9 @@ export default function StoreProvider({
 
   return (
     <Provider store={storeRef.current}>
-      <PersistGate loading={null} persistor={persistorRef.current}>
+      <PersistGate loading={null} persistor={persistorRef.current!}>
         <ToastProvider>
-           {children}
+          {children}
         </ToastProvider>
       </PersistGate>
     </Provider>

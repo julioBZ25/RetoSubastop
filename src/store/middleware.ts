@@ -1,15 +1,14 @@
-'use client';
+import type { Middleware } from "@reduxjs/toolkit";
 
-import { useStore } from 'react-redux';
-import { useEffect } from 'react';
-import { useToast } from '@/shared/components/ui/toast';
-
-export const actionLoggerMiddleware = (store: any) => (next: any) => (action: any) => {
-  const result = next(action);
-  return result;
-};
-
-export const useApiFeedback = () => {
-    const { showToast } = useToast();
-    const store = useStore();
-};
+export const actionLoggerMiddleware: Middleware =
+  (api) => (next) => (action) => {
+    console.groupCollapsed(
+      `[Redux] ${String((action as { type: string }).type)}`,
+    );
+    console.log("prev state:", api.getState());
+    console.log("action:", action);
+    const result = next(action);
+    console.log("next state:", api.getState());
+    console.groupEnd();
+    return result;
+  };
