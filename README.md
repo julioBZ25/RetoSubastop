@@ -51,7 +51,10 @@ El proyecto sigue una arquitectura orientada a características (Feature-Oriente
 - **src/store**: Configuración centralizada del estado global de la aplicación utilizando Redux Toolkit.
 - **src/app**: Directorio principal de Next.js para el enrutamiento y la composición de páginas utilizando componentes de las distintas características.
 
-### Beneficios Aplicados
-1. **Escalabilidad**: Facilita la adición de nuevas funcionalidades sin afectar la estructura global.
-2. **Mantenibilidad**: Al mantener la lógica relacionada agrupada, es más sencillo localizar y corregir errores o realizar mejoras.
-3. **Bajo Acoplamiento**: Las características son independientes entre sí, comunicándose a través de interfaces claras o del estado global cuando es estrictamente necesario.
+### AI Disclosure
+El proyecto fue desarrollado con Antigravity y Gemini. Se utilizó IA para la generación de código base y pruebas mediante el uso de PRD (Product Requirements Document) y Arquitectura.
+
+Se realizó la revisión del flujo y lógica general del proyecto, y se corrigieron errores y problemas de rendimiento como el uso de debounce en el buscador. Además, se afianzó ciertos aspectos de la arquitectura, se mejoró la experiencia de usuario como con los estilos y la paginación.
+
+### COMENTARIOS PARA EL REVISOR
+Se requirió que al guardar, se active una invalidación de tags para que se refleje el cambio en la lista de productos sin necesidad de recargar la página. Sin embargo, esto hace que no se vea en la lista el producto creado o editado. Como una solución, para la edición de producto, no se realiza la invalidación de tags, sino que se utiliza updateQueryData para actualizar el producto en la lista. Para la creación de producto, sí se realiza la invalidación de tags.
