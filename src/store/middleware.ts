@@ -2,6 +2,9 @@ import type { Middleware } from "@reduxjs/toolkit";
 
 export const actionLoggerMiddleware: Middleware =
   (api) => (next) => (action) => {
+    if (process.env.NODE_ENV !== "development") {
+      return next(action);
+    }
     console.groupCollapsed(
       `[Redux] ${String((action as { type: string }).type)}`,
     );
