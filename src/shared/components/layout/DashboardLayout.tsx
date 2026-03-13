@@ -22,9 +22,6 @@ export const DashboardLayout: React.FC<LayoutProps> = ({ children }) => {
         
         <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
           <form className="ml-auto flex-1 sm:flex-initial">
-            <div className="relative">
-              {/* This search will be handled by search params in the feature component */}
-            </div>
           </form>
           
           <Button variant="ghost" size="icon" className="rounded-full">
