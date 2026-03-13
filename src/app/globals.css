@@ -11,14 +11,13 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* DashSuba Design System Colors */
-  --color-dashsuba-primary: #1e293b; /* slate-800 */
-  --color-dashsuba-secondary: #64748b; /* slate-500 */
-  --color-dashsuba-accent: #0f172a; /* slate-900 */
-  --color-dashsuba-success: #10b981; /* emerald-500 */
-  --color-dashsuba-error: #ef4444; /* red-500 */
-  --color-dashsuba-surface: #f8fafc; /* slate-50 */
-  --color-dashsuba-border: #e2e8f0; /* slate-200 */
+  --color-dashsuba-primary: #1e293b;
+  --color-dashsuba-secondary: #64748b;
+  --color-dashsuba-accent: #0f172a;
+  --color-dashsuba-success: #10b981;
+  --color-dashsuba-error: #ef4444;
+  --color-dashsuba-surface: #f8fafc;
+  --color-dashsuba-border: #e2e8f0;
 }
 
 @media (prefers-color-scheme: dark) {
