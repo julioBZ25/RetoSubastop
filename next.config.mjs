@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -15,8 +14,6 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   eslint: {
-    // Se cambia temporalmente a true para permitir el despliegue
-    // mientras se resuelve la compatibilidad de ESLint 9 con Flat Config
     ignoreDuringBuilds: true,
   },
 };
